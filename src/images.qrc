@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/Key - Space.png</file>
+        <file>images/Key - Right Arrow.png</file>
+        <file>images/Key - Left Arrow.png</file>
+        <file>images/Key - Enter.png</file>
+        <file>images/Key - Backspace.png</file>
+    </qresource>
+</RCC>

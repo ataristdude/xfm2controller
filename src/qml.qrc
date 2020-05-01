@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>OperatorPage.qml</file>
+        <file>CommonPage.qml</file>
+        <file>EnvelopePage.qml</file>
+        <file>AlgorithmPage.qml</file>
+        <file>PopupMessage.qml</file>
+        <file>LFOPage.qml</file>
+        <file>ModulationPage.qml</file>
+        <file>ArpeggiatorPage.qml</file>
+        <file>EffectsPage.qml</file>
+        <file>EffectsPage2.qml</file>
+        <file>CustomDial.qml</file>
+        <file>CustomKeyboard.qml</file>
+    </qresource>
+</RCC>
