@@ -432,19 +432,11 @@ void SynthModel::setPitchEG_L5(int v)
 
 int SynthModel::pitchEG_R0()
 {
-<<<<<<< HEAD
     return static_cast<int>(readMemoryLocation(PITCH_EG_DELAY));
-=======
-    return static_cast<int>(255-readMemoryLocation(PITCH_EG_DELAY));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
 }
 
 void SynthModel::setPitchEG_R0(int v)
 {
-<<<<<<< HEAD
-=======
-    v=255-v;
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
     unsigned char vv=static_cast<unsigned char>(v);
     if (vv != readMemoryLocation(PITCH_EG_DELAY)) {
         writeMemoryLocation(PITCH_EG_DELAY, vv);
@@ -1749,14 +1741,9 @@ bool SynthModel::isOperatorModulating(int op, int modulatingop)
         return false;
     }
 
-<<<<<<< HEAD
     modulatingop++;
     a=readMemoryLocation(static_cast<XFM2Parameter>(ALGO1+op));
     return (a & (1 << modulatingop)) != 0;
-=======
-    a=readMemoryLocation(static_cast<XFM2Parameter>(ALGO1+op));
-    return (a & (2 << modulatingop)) != 0;
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
 }
 
 bool SynthModel::makeOperatorModulate(int op, int modulatingop, bool enabled)
@@ -1771,7 +1758,6 @@ bool SynthModel::makeOperatorModulate(int op, int modulatingop, bool enabled)
         return false;
     }
 
-<<<<<<< HEAD
     modulatingop++;
     a=readMemoryLocation(static_cast<XFM2Parameter>(ALGO1+op));
     if (enabled) {
@@ -1783,16 +1769,6 @@ bool SynthModel::makeOperatorModulate(int op, int modulatingop, bool enabled)
     }
     writeMemoryLocation(static_cast<XFM2Parameter>(ALGO1+op), a);
     emit operatorHasChanged();
-=======
-    a=readMemoryLocation(static_cast<XFM2Parameter>(ALGO1+op));
-    if (enabled) {
-        a|=(2 << modulatingop);
-    } else {
-        if ((a & (2 << modulatingop)) != 0) {
-            a^=(2 << modulatingop);
-        }
-    }
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
 
     return true;
 }
@@ -1886,11 +1862,7 @@ QList<QObject *> SynthModel::fmOperators()
                 o->setL3(readMemoryLocation(OP_LEVEL3_1));
                 o->setL4(readMemoryLocation(OP_LEVEL4_1));
                 o->setL5(readMemoryLocation(OP_LEVEL5_1));
-<<<<<<< HEAD
                 o->setR0(readMemoryLocation(OP_DELAY_1));
-=======
-                o->setR0(255-readMemoryLocation(OP_DELAY_1));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
                 o->setR1(255-readMemoryLocation(OP_RATE1_1));
                 o->setR2(255-readMemoryLocation(OP_RATE2_1));
                 o->setR3(255-readMemoryLocation(OP_RATE3_1));
@@ -1927,11 +1899,7 @@ QList<QObject *> SynthModel::fmOperators()
                 o->setL3(readMemoryLocation(OP_LEVEL3_2));
                 o->setL4(readMemoryLocation(OP_LEVEL4_2));
                 o->setL5(readMemoryLocation(OP_LEVEL5_2));
-<<<<<<< HEAD
                 o->setR0(readMemoryLocation(OP_DELAY_2));
-=======
-                o->setR0(255-readMemoryLocation(OP_DELAY_2));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
                 o->setR1(255-readMemoryLocation(OP_RATE1_2));
                 o->setR2(255-readMemoryLocation(OP_RATE2_2));
                 o->setR3(255-readMemoryLocation(OP_RATE3_2));
@@ -1968,11 +1936,7 @@ QList<QObject *> SynthModel::fmOperators()
                 o->setL3(readMemoryLocation(OP_LEVEL3_3));
                 o->setL4(readMemoryLocation(OP_LEVEL4_3));
                 o->setL5(readMemoryLocation(OP_LEVEL5_3));
-<<<<<<< HEAD
                 o->setR0(readMemoryLocation(OP_DELAY_3));
-=======
-                o->setR0(255-readMemoryLocation(OP_DELAY_3));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
                 o->setR1(255-readMemoryLocation(OP_RATE1_3));
                 o->setR2(255-readMemoryLocation(OP_RATE2_3));
                 o->setR3(255-readMemoryLocation(OP_RATE3_3));
@@ -2009,11 +1973,7 @@ QList<QObject *> SynthModel::fmOperators()
                 o->setL3(readMemoryLocation(OP_LEVEL3_4));
                 o->setL4(readMemoryLocation(OP_LEVEL4_4));
                 o->setL5(readMemoryLocation(OP_LEVEL5_4));
-<<<<<<< HEAD
                 o->setR0(readMemoryLocation(OP_DELAY_4));
-=======
-                o->setR0(255-readMemoryLocation(OP_DELAY_4));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
                 o->setR1(255-readMemoryLocation(OP_RATE1_4));
                 o->setR2(255-readMemoryLocation(OP_RATE2_4));
                 o->setR3(255-readMemoryLocation(OP_RATE3_4));
@@ -2050,11 +2010,7 @@ QList<QObject *> SynthModel::fmOperators()
                 o->setL3(readMemoryLocation(OP_LEVEL3_5));
                 o->setL4(readMemoryLocation(OP_LEVEL4_5));
                 o->setL5(readMemoryLocation(OP_LEVEL5_5));
-<<<<<<< HEAD
                 o->setR0(readMemoryLocation(OP_DELAY_5));
-=======
-                o->setR0(255-readMemoryLocation(OP_DELAY_5));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
                 o->setR1(255-readMemoryLocation(OP_RATE1_5));
                 o->setR2(255-readMemoryLocation(OP_RATE2_5));
                 o->setR3(255-readMemoryLocation(OP_RATE3_5));
@@ -2091,11 +2047,7 @@ QList<QObject *> SynthModel::fmOperators()
                 o->setL3(readMemoryLocation(OP_LEVEL3_6));
                 o->setL4(readMemoryLocation(OP_LEVEL4_6));
                 o->setL5(readMemoryLocation(OP_LEVEL5_6));
-<<<<<<< HEAD
                 o->setR0(readMemoryLocation(OP_DELAY_6));
-=======
-                o->setR0(255-readMemoryLocation(OP_DELAY_6));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
                 o->setR1(255-readMemoryLocation(OP_RATE1_6));
                 o->setR2(255-readMemoryLocation(OP_RATE2_6));
                 o->setR3(255-readMemoryLocation(OP_RATE3_6));
@@ -2150,11 +2102,7 @@ bool SynthModel::updateOperator(XFMOperator *op, bool notify/*=false*/)
             writeMemoryLocation(OP_LEVEL3_1, static_cast<unsigned char>(op->L3()));
             writeMemoryLocation(OP_LEVEL4_1, static_cast<unsigned char>(op->L4()));
             writeMemoryLocation(OP_LEVEL5_1, static_cast<unsigned char>(op->L5()));
-<<<<<<< HEAD
             writeMemoryLocation(OP_DELAY_1, static_cast<unsigned char>(op->R0()));
-=======
-            writeMemoryLocation(OP_DELAY_1, 255-static_cast<unsigned char>(op->R0()));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
             writeMemoryLocation(OP_RATE1_1, 255-static_cast<unsigned char>(op->R1()));
             writeMemoryLocation(OP_RATE2_1, 255-static_cast<unsigned char>(op->R2()));
             writeMemoryLocation(OP_RATE3_1, 255-static_cast<unsigned char>(op->R3()));
@@ -2191,11 +2139,7 @@ bool SynthModel::updateOperator(XFMOperator *op, bool notify/*=false*/)
             writeMemoryLocation(OP_LEVEL3_2, static_cast<unsigned char>(op->L3()));
             writeMemoryLocation(OP_LEVEL4_2, static_cast<unsigned char>(op->L4()));
             writeMemoryLocation(OP_LEVEL5_2, static_cast<unsigned char>(op->L5()));
-<<<<<<< HEAD
             writeMemoryLocation(OP_DELAY_2, static_cast<unsigned char>(op->R0()));
-=======
-            writeMemoryLocation(OP_DELAY_2, 255-static_cast<unsigned char>(op->R0()));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
             writeMemoryLocation(OP_RATE1_2, 255-static_cast<unsigned char>(op->R1()));
             writeMemoryLocation(OP_RATE2_2, 255-static_cast<unsigned char>(op->R2()));
             writeMemoryLocation(OP_RATE3_2, 255-static_cast<unsigned char>(op->R3()));
@@ -2232,11 +2176,7 @@ bool SynthModel::updateOperator(XFMOperator *op, bool notify/*=false*/)
             writeMemoryLocation(OP_LEVEL3_3, static_cast<unsigned char>(op->L3()));
             writeMemoryLocation(OP_LEVEL4_3, static_cast<unsigned char>(op->L4()));
             writeMemoryLocation(OP_LEVEL5_3, static_cast<unsigned char>(op->L5()));
-<<<<<<< HEAD
             writeMemoryLocation(OP_DELAY_3, static_cast<unsigned char>(op->R0()));
-=======
-            writeMemoryLocation(OP_DELAY_3, 255-static_cast<unsigned char>(op->R0()));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
             writeMemoryLocation(OP_RATE1_3, 255-static_cast<unsigned char>(op->R1()));
             writeMemoryLocation(OP_RATE2_3, 255-static_cast<unsigned char>(op->R2()));
             writeMemoryLocation(OP_RATE3_3, 255-static_cast<unsigned char>(op->R3()));
@@ -2273,11 +2213,7 @@ bool SynthModel::updateOperator(XFMOperator *op, bool notify/*=false*/)
             writeMemoryLocation(OP_LEVEL3_4, static_cast<unsigned char>(op->L3()));
             writeMemoryLocation(OP_LEVEL4_4, static_cast<unsigned char>(op->L4()));
             writeMemoryLocation(OP_LEVEL5_4, static_cast<unsigned char>(op->L5()));
-<<<<<<< HEAD
             writeMemoryLocation(OP_DELAY_4, static_cast<unsigned char>(op->R0()));
-=======
-            writeMemoryLocation(OP_DELAY_4, 255-static_cast<unsigned char>(op->R0()));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
             writeMemoryLocation(OP_RATE1_4, 255-static_cast<unsigned char>(op->R1()));
             writeMemoryLocation(OP_RATE2_4, 255-static_cast<unsigned char>(op->R2()));
             writeMemoryLocation(OP_RATE3_4, 255-static_cast<unsigned char>(op->R3()));
@@ -2314,11 +2250,7 @@ bool SynthModel::updateOperator(XFMOperator *op, bool notify/*=false*/)
             writeMemoryLocation(OP_LEVEL3_5, static_cast<unsigned char>(op->L3()));
             writeMemoryLocation(OP_LEVEL4_5, static_cast<unsigned char>(op->L4()));
             writeMemoryLocation(OP_LEVEL5_5, static_cast<unsigned char>(op->L5()));
-<<<<<<< HEAD
             writeMemoryLocation(OP_DELAY_5, static_cast<unsigned char>(op->R0()));
-=======
-            writeMemoryLocation(OP_DELAY_5, 255-static_cast<unsigned char>(op->R0()));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
             writeMemoryLocation(OP_RATE1_5, 255-static_cast<unsigned char>(op->R1()));
             writeMemoryLocation(OP_RATE2_5, 255-static_cast<unsigned char>(op->R2()));
             writeMemoryLocation(OP_RATE3_5, 255-static_cast<unsigned char>(op->R3()));
@@ -2355,11 +2287,7 @@ bool SynthModel::updateOperator(XFMOperator *op, bool notify/*=false*/)
             writeMemoryLocation(OP_LEVEL3_6, static_cast<unsigned char>(op->L3()));
             writeMemoryLocation(OP_LEVEL4_6, static_cast<unsigned char>(op->L4()));
             writeMemoryLocation(OP_LEVEL5_6, static_cast<unsigned char>(op->L5()));
-<<<<<<< HEAD
             writeMemoryLocation(OP_DELAY_6, static_cast<unsigned char>(op->R0()));
-=======
-            writeMemoryLocation(OP_DELAY_6, 255-static_cast<unsigned char>(op->R0()));
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
             writeMemoryLocation(OP_RATE1_6, 255-static_cast<unsigned char>(op->R1()));
             writeMemoryLocation(OP_RATE2_6, 255-static_cast<unsigned char>(op->R2()));
             writeMemoryLocation(OP_RATE3_6, 255-static_cast<unsigned char>(op->R3()));
