@@ -353,7 +353,6 @@ Item {
             var opR4=fmOperator.R4/2;
             var opR5=fmOperator.R5/2;
 
-<<<<<<< HEAD
             if (opL0 > 127) opL0=127;
             if (opL1 > 127) opL1=127;
             if (opL2 > 127) opL2=127;
@@ -367,8 +366,6 @@ Item {
             if (opR4 > 127) opR4=127;
             if (opR5 > 127) opR5=127;
 
-=======
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
             ctx.lineWidth=1;
             ctx.strokeStyle="lightgray";
             ctx.beginPath();
@@ -408,7 +405,6 @@ Item {
             ctx.fillRect(opR0+opR1+opR2+opR3-5, canvas.height-opL3-5-1, 10, 10);
             ctx.fillRect(opR0+opR1+opR2+opR3+opR4-5, canvas.height-opL4-5-1, 10, 10);
             ctx.fillRect(opR0+opR1+opR2+opR3+opR4+opR5-5, canvas.height-opL5-5-1, 10, 10);
-<<<<<<< HEAD
 
             ctx.fillStyle = "white";
             ctx.font = "16px monospace";
@@ -425,8 +421,6 @@ Item {
             ctx.fillText("R3: "+opR3.toFixed(0), canvas.width-80, 64);
             ctx.fillText("R4: "+opR4.toFixed(0), canvas.width-80, 80);
             ctx.fillText("R5: "+opR5.toFixed(0), canvas.width-80, 96);
-=======
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
         }
 
         MouseArea {
@@ -803,11 +797,7 @@ Item {
         y: 135
         width: 121
         height: 80
-<<<<<<< HEAD
         maximumValue: 63
-=======
-        maximumValue: 255
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
         stepSize: 1
         onValueChanged: {
             fmOperator.ratio=dialRatio.value;
