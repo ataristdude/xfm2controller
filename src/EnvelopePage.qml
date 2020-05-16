@@ -425,6 +425,7 @@ Item {
             var egR4=synthModel.pitchEG_R4/2;
             var egR5=synthModel.pitchEG_R5/2;
 
+<<<<<<< HEAD
             if (egL0 > 127) egL0=127;
             if (egL1 > 127) egL1=127;
             if (egL2 > 127) egL2=127;
@@ -438,6 +439,8 @@ Item {
             if (egR4 > 127) egR4=127;
             if (egR5 > 127) egR5=127;
 
+=======
+>>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
             ctx.lineWidth=1;
             ctx.strokeStyle="lightgray";
             ctx.beginPath();
@@ -476,6 +479,7 @@ Item {
             ctx.fillRect(egR0+egR1+egR2+egR3-5, canvas.height-egL3-5-1, 10, 10);
             ctx.fillRect(egR0+egR1+egR2+egR3+egR4-5, canvas.height-egL4-5-1, 10, 10);
             ctx.fillRect(egR0+egR1+egR2+egR3+egR4+egR5-5, canvas.height-egL5-5-1, 10, 10);
+<<<<<<< HEAD
 
             ctx.fillStyle = "white";
             ctx.font = "16px monospace";
@@ -492,6 +496,8 @@ Item {
             ctx.fillText("R3: "+egR3.toFixed(0), canvas.width-80, 64);
             ctx.fillText("R4: "+egR4.toFixed(0), canvas.width-80, 80);
             ctx.fillText("R5: "+egR5.toFixed(0), canvas.width-80, 96);
+=======
+>>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
         }
 
         MouseArea {
