@@ -135,11 +135,8 @@ Item {
         id: dialFade
         x: 222
         y: 130
-<<<<<<< HEAD
         width: 136
         height: 136
-=======
->>>>>>> 5f1b6151ec4d2bf472cad1981025fb954064533c
         maximumValue: 255
         onValueChanged: {
             synthModel.lfoFade=synthModel.lfoFade;
